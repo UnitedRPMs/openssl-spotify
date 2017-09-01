@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 %ifarch x86_64 
 %global openssltarget linux-x86_64
 %else
