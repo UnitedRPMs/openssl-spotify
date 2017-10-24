@@ -11,12 +11,12 @@ AutoReqProv: no
 
 Summary:	Secure Sockets Layer communications libs & utils
 Name:		openssl-spotify
-Version:	1.0.0
-Release:        5%{?dist}
+Version:	1.0.2
+Release:        1%{?dist}
 License:	OpenSSL
 Group: 		System Environment/Libraries
 URL:		http://www.openssl.org/
-Source:		ftp://ftp.openssl.org/source/old/%{version}/openssl-%{version}.tar.gz
+Source:		https://www.openssl.org/source/openssl-%{version}l.tar.gz
 
 BuildRequires: 	coreutils, krb5-devel, perl, sed, zlib-devel, /usr/bin/cmp
 BuildRequires: 	/usr/bin/rename
@@ -34,7 +34,7 @@ rpm package.
 
 %prep
 
-%setup -q -n openssl-%{version}
+%autosetup -n openssl-%{version}l
 
 %build 
 
@@ -62,6 +62,9 @@ install -Dm755 libcrypto.so.1.0.0 %{buildroot}/%{_libdir}/libcrypto.so.1.0.0
 %{_libdir}/libcrypto.so.1.0.0
 
 %changelog
+
+* Sun Oct 22 2017 David Vásquez <davidjeremias82[AT]gmail [DOT] com> - 1.0.2-1
+- Updated to 1.0.2
 
 * Wed Jan 11 2017 David Vásquez <davidjeremias82[AT]gmail [DOT] com> - 1.0.0-5
 - Renamed
